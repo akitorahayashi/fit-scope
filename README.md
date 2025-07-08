@@ -1,8 +1,12 @@
-# TemplateApp
+# Fit Scope
 
-SwiftUI ベースの iOS アプリ用テンプレートです
+フィットネスと健康管理のためのSwiftUI iOS アプリです
 
-## カスタマイズの手順
+## アプリについて
+
+Fit Scopeは、フィットネスと健康管理をサポートするiOSアプリです。
+
+## 開発環境設定
 
 1. project.yml  
    - `name` → アプリ名  

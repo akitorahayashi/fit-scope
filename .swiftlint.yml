@@ -10,9 +10,9 @@
 
 # Paths to include in linting
 included:
-  - TemplateApp/**/*.swift
-  - TemplateAppTests/**/*.swift
-  - TemplateAppUITests/**/*.swift
+  - FitScope/**/*.swift
+  - FitScopeTests/**/*.swift
+  - FitScopeUITests/**/*.swift
 
 #-------------------------------------------------------------------
 # Analysis Targets

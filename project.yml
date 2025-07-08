@@ -1,8 +1,8 @@
 # mint run xcodegen generate
 
-name: TemplateApp
+name: FitScope
 options:
-  bundleIdPrefix: com.example
+  bundleIdPrefix: com.akitorahayashi
   createIntermediateGroups: true
   defaultConfig: Debug
   
@@ -17,75 +17,75 @@ configs:
   Release: release
 
 targets:
-  TemplateApp:
+  FitScope:
     type: application
     platform: iOS
     deploymentTarget: "15.0"
     sources:
-      - TemplateApp
+      - FitScope
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.example.templateapp
-      INFOPLIST_FILE: TemplateApp/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.akitorahayashi.fitscope
+      INFOPLIST_FILE: FitScope/Info.plist
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-      DEVELOPMENT_ASSET_PATHS: TemplateApp/Resources
+      DEVELOPMENT_ASSET_PATHS: FitScope/Resources
 
-  TemplateAppTests:
+  FitScopeTests:
     type: bundle.unit-test
     platform: iOS
     deploymentTarget: "15.0"
     sources:
-      - TemplateAppTests
+      - FitScopeTests
     dependencies:
-      - target: TemplateApp
+      - target: FitScope
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.example.templateapp.tests
-      INFOPLIST_FILE: TemplateAppTests/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.akitorahayashi.fitscope.tests
+      INFOPLIST_FILE: FitScopeTests/Info.plist
 
-  TemplateAppUITests:
+  FitScopeUITests:
     type: bundle.ui-testing
     platform: iOS
     deploymentTarget: "15.0"
     sources:
-      - TemplateAppUITests
+      - FitScopeUITests
     dependencies:
-      - target: TemplateApp
+      - target: FitScope
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.example.templateapp.uitests
-      INFOPLIST_FILE: TemplateAppUITests/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.akitorahayashi.fitscope.uitests
+      INFOPLIST_FILE: FitScopeUITests/Info.plist
 
 schemes:
-  TemplateApp:
+  FitScope:
     build:
       targets:
-        TemplateApp: all
+        FitScope: all
     run:
       config: Debug
     test:
       config: Debug
       gatherCoverageData: false
       targets:
-        - TemplateAppTests
-        - TemplateAppUITests
+        - FitScopeTests
+        - FitScopeUITests
     archive:
       config: Release
 
-  TemplateAppTests:
+  FitScopeTests:
     build:
       targets:
-        TemplateAppTests: all
+        FitScopeTests: all
     test:
       config: Debug
       gatherCoverageData: false
       targets:
-        - TemplateAppTests
+        - FitScopeTests
 
-  TemplateAppUITests:
+  FitScopeUITests:
     build:
       targets:
-        TemplateAppUITests: all
+        FitScopeUITests: all
     test:
       config: Debug
       gatherCoverageData: false
       targets:
-        - TemplateAppUITests
+        - FitScopeUITests
 

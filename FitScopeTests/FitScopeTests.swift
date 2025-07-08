@@ -1,7 +1,7 @@
-@testable import TemplateApp
+@testable import FitScope
 import XCTest
 
-final class TemplateAppTests: XCTestCase {
+final class FitScopeTests: XCTestCase {
     func testExample() {
         XCTAssertTrue(true)
     }

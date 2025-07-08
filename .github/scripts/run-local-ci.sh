@@ -11,10 +11,10 @@ set -euo pipefail
 
 # === Configuration ===
 OUTPUT_DIR="ci-outputs"
-PROJECT_FILE="TemplateApp.xcodeproj"
-APP_SCHEME="TemplateApp"
-UNIT_TEST_SCHEME="TemplateAppTests"
-UI_TEST_SCHEME="TemplateAppUITests"
+PROJECT_FILE="FitScope.xcodeproj"
+APP_SCHEME="FitScope"
+UNIT_TEST_SCHEME="FitScopeTests"
+UI_TEST_SCHEME="FitScopeUITests"
 
 # === Default Flags ===
 run_unit_tests=false
@@ -124,8 +124,8 @@ find_existing_artifacts() {
   
   for path in "${search_paths[@]}"; do
     if [ -d "$path" ]; then
-      # findを使ってTemplateApp.appを検索
-      if find "$path" -name "TemplateApp.app" -type d | head -1 | grep -q "TemplateApp.app"; then
+      # findを使ってFitScope.appを検索
+      if find "$path" -name "FitScope.app" -type d | head -1 | grep -q "FitScope.app"; then
         echo "Found existing build artifacts at: $path"
         # シンボリックリンクまたはコピーでアーティファクトを利用可能にする
         if [ "$path" != "$OUTPUT_DIR/test-results/DerivedData" ]; then
@@ -302,7 +302,7 @@ if [ "$run_archive" = true ]; then
     -scheme "$APP_SCHEME" \
     -configuration Release \
     -destination "generic/platform=iOS Simulator" \
-    -archivePath "$OUTPUT_DIR/production/archives/TemplateApp.xcarchive" \
+    -archivePath "$OUTPUT_DIR/production/archives/FitScope.xcarchive" \
     -derivedDataPath "$OUTPUT_DIR/production/DerivedData" \
     -skipMacroValidation \
     CODE_SIGNING_ALLOWED=NO \
@@ -312,7 +312,7 @@ if [ "$run_archive" = true ]; then
 
   # アーカイブ内容を検証
   echo "Verifying archive contents..."
-  ARCHIVE_PATH="$OUTPUT_DIR/production/archives/TemplateApp.xcarchive"
+  ARCHIVE_PATH="$OUTPUT_DIR/production/archives/FitScope.xcarchive"
   ARCHIVE_APP_PATH="$ARCHIVE_PATH/Products/Applications/$APP_SCHEME.app"
   if [ ! -d "$ARCHIVE_APP_PATH" ]; then
     echo "Error: '$APP_SCHEME.app' not found in expected archive location ($ARCHIVE_APP_PATH)."

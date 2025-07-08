@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct TemplateApp: App {
+struct FitScopeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
