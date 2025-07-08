@@ -1,0 +1,24 @@
+name: Template App CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  # コード品質チェック
+  code-quality:
+    name: Code Quality Check
+    uses: ./.github/workflows/code-quality.yml
+    
+  # ビルドとテスト
+  build-and-test:
+    name: Run Tests
+    uses: ./.github/workflows/run-tests.yml
+    
+  # アーカイブビルド検証
+  build-archive:
+    name: Build Unsigned Archive
+    uses: ./.github/workflows/build-unsigned-archive.yml 
